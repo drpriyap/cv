@@ -4,10 +4,10 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  // Set base to '/' for custom domain or root deployment
-  // Change to '/repository-name/' if deploying to github.io/repository-name
-  base: './',
-  
+  // For user/organization sites (username.github.io), use '/'
+  // For project sites (username.github.io/repo), use '/repo/'
+  base: '/',
+
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
     // Tailwind is not being actively used – do not remove them
