@@ -4,9 +4,9 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  // For user/organization sites (username.github.io), use '/'
-  // For project sites (username.github.io/repo), use '/repo/'
-  base: '/',
+  // Use relative base so built files reference assets relative to index.html.
+  // This produces './assets/...' paths which work for both user and project pages.
+  base: './',
 
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
