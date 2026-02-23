@@ -1,12 +1,12 @@
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
-import { 
-  Document, 
-  Packer, 
-  Paragraph, 
-  TextRun, 
-  HeadingLevel, 
-  AlignmentType, 
+import {
+  Document,
+  Packer,
+  Paragraph,
+  TextRun,
+  HeadingLevel,
+  AlignmentType,
   BorderStyle,
   Table,
   TableRow,
@@ -36,9 +36,9 @@ export async function downloadAsPDF() {
 
   // Helper function to add text
   const addText = (
-    text: string, 
-    x: number, 
-    y: number, 
+    text: string,
+    x: number,
+    y: number,
     options: {
       fontSize?: number;
       fontStyle?: 'normal' | 'bold' | 'italic';
@@ -47,9 +47,9 @@ export async function downloadAsPDF() {
       maxWidth?: number;
     } = {}
   ) => {
-    const { 
-      fontSize = 10, 
-      fontStyle = 'normal', 
+    const {
+      fontSize = 10,
+      fontStyle = 'normal',
       color = '#000000',
       align = 'left',
       maxWidth = contentWidth
@@ -57,7 +57,7 @@ export async function downloadAsPDF() {
 
     pdf.setFontSize(fontSize);
     pdf.setFont('helvetica', fontStyle);
-    
+
     // Convert hex color to RGB
     const r = parseInt(color.slice(1, 3), 16);
     const g = parseInt(color.slice(3, 5), 16);
@@ -65,7 +65,7 @@ export async function downloadAsPDF() {
     pdf.setTextColor(r, g, b);
 
     const lines = pdf.splitTextToSize(text, maxWidth);
-    
+
     lines.forEach((line: string, index: number) => {
       let xPos = x;
       if (align === 'center') {
@@ -110,9 +110,9 @@ export async function downloadAsPDF() {
     fontStyle: 'bold',
     color: '#1e293b'
   });
-  
+
   addLine(margin, yPosition + 2, pageWidth - margin, yPosition + 2, '#2563eb', 1.5);
-  
+
   yPosition = addText('MBBS, MD (Pathology)', margin, yPosition + 8, {
     fontSize: 12,
     fontStyle: 'bold',
@@ -123,11 +123,11 @@ export async function downloadAsPDF() {
 
   // Contact Information Box
   addRect(margin, yPosition, contentWidth, 55, '#f8fafc');
-  
+
   const contactY = yPosition + 6;
   const col1X = margin + 5;
   const col2X = margin + contentWidth / 2 + 5;
-  
+
   let leftY = contactY;
   let rightY = contactY;
 
@@ -527,7 +527,7 @@ export async function downloadAsDOC() {
               alignment: AlignmentType.LEFT,
               spacing: { after: 120 },
             }),
-            
+
             new Paragraph({
               spacing: { after: 400 },
               children: [
@@ -545,7 +545,7 @@ export async function downloadAsDOC() {
               text: 'CONTACT INFORMATION',
               heading: HeadingLevel.HEADING_2,
             }),
-            
+
             new Table({
               width: {
                 size: 100,
@@ -623,7 +623,7 @@ export async function downloadAsDOC() {
               text: 'PROFESSIONAL QUALIFICATIONS',
               heading: HeadingLevel.HEADING_2,
             }),
-            
+
             new Table({
               width: { size: 100, type: WidthType.PERCENTAGE },
               rows: [
@@ -652,8 +652,10 @@ export async function downloadAsDOC() {
                         }),
                         new Paragraph({
                           text: 'Lokmanya Tilak Municipal Medical College, Sion, Mumbai',
-                          size: 20,
                           spacing: { after: 60 },
+                          run: {
+                            size: 20,
+                          },
                         }),
                         new Paragraph({
                           children: [
@@ -707,8 +709,10 @@ export async function downloadAsDOC() {
                         }),
                         new Paragraph({
                           text: 'B.R.D. Medical College, Gorakhpur',
-                          size: 20,
                           spacing: { after: 60 },
+                          run: {
+                            size: 20,
+                          },
                         }),
                         new Paragraph({
                           children: [
@@ -748,7 +752,9 @@ export async function downloadAsDOC() {
             new Paragraph({
               text: 'English, Hindi',
               spacing: { after: 300 },
-              size: 20,
+              run: {
+                size: 20,
+              },
             }),
 
             // Certifications
