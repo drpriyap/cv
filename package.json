@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d dist",
-    "deploy:clean": "gh-pages -d dist -f",
+    "predeploy": "npm run build",
+    "deploy": "git add dist -f && git commit -m 'Deploy to gh-pages' && git subtree push --prefix dist origin gh-pages",
+    "deploy:clean": "git add dist -f && git commit -m 'Deploy to gh-pages' && git subtree push --prefix dist origin gh-pages -f",
     "dev": "vite"
   },
   "dependencies": {
