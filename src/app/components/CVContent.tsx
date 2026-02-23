@@ -63,6 +63,15 @@ export function CVContent() {
               <p className="text-sm font-medium text-gray-900">63A, Moh, Ailwal near Gurudwara, Post Sadar, Azamgarh, U.P. - 276001</p>
             </div>
           </div>
+          <div className="flex items-start gap-2">
+            <Globe className="w-4 h-4 text-blue-600 mt-1 flex-shrink-0" />
+            <div>
+              <p className="text-sm text-gray-600">Web resume</p>
+              <p className="text-sm font-medium text-blue-600">
+                <a href="https://drpriyap.github.io/cv/" target="_blank" rel="noreferrer">https://drpriyap.github.io/cv/</a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 

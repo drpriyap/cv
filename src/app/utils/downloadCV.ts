@@ -173,7 +173,7 @@ export async function downloadAsPDF() {
   yPosition += 8;
 
   // MD Pathology
-  addRect(margin - 2, yPosition, 3, 25, '#60a5fa');
+  //addRect(margin - 2, yPosition, 3, 25, '#60a5fa');
   yPosition = addText('M.D. Pathology', margin + 5, yPosition, {
     fontSize: 11,
     fontStyle: 'bold',
@@ -194,7 +194,7 @@ export async function downloadAsPDF() {
   yPosition += 8;
 
   // MBBS
-  addRect(margin - 2, yPosition, 3, 25, '#60a5fa');
+  //addRect(margin - 2, yPosition, 3, 25, '#60a5fa');
   yPosition = addText('M.B.B.S.', margin + 5, yPosition, {
     fontSize: 11,
     fontStyle: 'bold',
@@ -610,6 +610,13 @@ export async function downloadAsDOC() {
                             new TextRun({ text: '📍 Permanent Address: ', bold: true, size: 20, color: '64748b' }),
                             new TextRun({ text: '63A, Moh, Ailwal near Gurudwara, Post Sadar, Azamgarh, U.P. - 276001', size: 20 }),
                           ],
+                        }),
+                        new Paragraph({
+                          children: [
+                            new TextRun({ text: 'Web resume: ', bold: true, size: 20, color: '64748b' }),
+                            new TextRun({ text: 'https://drpriyap.github.io/cv/', size: 20, color: '2563eb', underline: { type: UnderlineType.SINGLE } }),
+                          ],
+                          spacing: { after: 100 },
                         }),
                       ],
                     }),
