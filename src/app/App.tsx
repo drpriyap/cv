@@ -71,7 +71,7 @@ export default function App() {
 
         {/* Footer Note */}
         <div className="mt-8 text-center text-sm text-gray-500">
-          <p>Click the download buttons above to save this CV as PDF or DOC format</p>
+          <p>Click the download buttons above to save this CV as PDF format</p>
         </div>
       </div>
     </div>
